@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="ApotekApp.SettingPage" BackgroundColor="#F8FAFC">
+<Grid RowDefinitions="*">
+    <ScrollView Padding="24">
+        <VerticalStackLayout Spacing="16">
+            <Border BackgroundColor="White" StrokeShape="RoundRectangle 12" Stroke="#E2E8F0" Padding="24">
+                <VerticalStackLayout Spacing="18">
+                    <Label Text="Profil &amp; Identitas Apotek" FontSize="18" FontAttributes="Bold" TextColor="#0F172A"/>
+
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpacing="20">
+                        <Border Grid.Column="0" StrokeShape="RoundRectangle 10" Stroke="#CBD5E1" StrokeThickness="1" Padding="6" HeightRequest="120" WidthRequest="120" BackgroundColor="#F8FAFC">
+                            <Image x:Name="ImgLogoPreview" Aspect="AspectFit"/>
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="8">
+                            <Label Text="Logo Apotek" FontSize="13" FontAttributes="Bold" TextColor="#475569"/>
+                            <Label Text="Gunakan gambar JPG, PNG, atau format gambar lain yang didukung Windows." FontSize="11" TextColor="#64748B"/>
+                            <Button Text="📷 Upload / Ganti Logo" Clicked="OnPilihLogoClicked" BackgroundColor="#2563EB" TextColor="White" HorizontalOptions="Start"/>
+                            <Label x:Name="LblLogoStatus" Text="Belum ada logo khusus." FontSize="11" TextColor="#64748B"/>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <BoxView HeightRequest="1" Color="#E2E8F0"/>
+
+                    <VerticalStackLayout Spacing="14">
+                        <VerticalStackLayout Spacing="5"><Label Text="Nama Apotek" FontSize="13" FontAttributes="Bold" TextColor="#475569"/><Entry x:Name="EntNamaApotek" Placeholder="Masukkan Nama Apotek" TextColor="#0F172A"/></VerticalStackLayout>
+                        <VerticalStackLayout Spacing="5"><Label Text="Alamat Apotek" FontSize="13" FontAttributes="Bold" TextColor="#475569"/><Editor x:Name="EntAlamatApotek" Placeholder="Masukkan Alamat Lengkap Apotek" TextColor="#0F172A" AutoSize="TextChanges" MinimumHeightRequest="70"/></VerticalStackLayout>
+                        <VerticalStackLayout Spacing="5"><Label Text="Nomor Telepon" FontSize="13" FontAttributes="Bold" TextColor="#475569"/><Entry x:Name="EntTeleponApotek" Placeholder="Masukkan Nomor Telepon Apotek" TextColor="#0F172A" Keyboard="Telephone"/></VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <HorizontalStackLayout HorizontalOptions="End" Spacing="8">
+                        <Button Text="Simpan Pengaturan" Clicked="OnSimpanSettingClicked" BackgroundColor="#2563EB" TextColor="White" FontAttributes="Bold"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</Grid>
+</ContentPage>
